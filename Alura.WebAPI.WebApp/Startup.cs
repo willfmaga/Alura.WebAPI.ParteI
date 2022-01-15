@@ -25,11 +25,11 @@ namespace Alura.ListaLeitura.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<LeituraContext>(options => {
-                options.UseSqlServer(Configuration.GetConnectionString("ListaLeitura"));
+                options.UseSqlServer(Configuration.GetConnectionString("ListaLeituraDocker"));
             });
 
             services.AddDbContext<AuthDbContext>(options => {
-                options.UseSqlServer(Configuration.GetConnectionString("AuthDB"));
+                options.UseSqlServer(Configuration.GetConnectionString("AuthDBDocker"));
             });
 
             services.AddIdentity<Usuario, IdentityRole>(options =>

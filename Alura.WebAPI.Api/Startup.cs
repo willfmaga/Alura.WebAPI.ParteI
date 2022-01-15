@@ -27,7 +27,7 @@ namespace Alura.WebAPI.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<LeituraContext>(options => {
-                options.UseSqlServer(Configuration.GetConnectionString("ListaLeitura"));
+                options.UseSqlServer(Configuration.GetConnectionString("ListaLeituraDocker"));
             });
 
             services.AddTransient<IRepository<Livro>, RepositorioBaseEF<Livro>>();

@@ -27,7 +27,7 @@ namespace Alura.WebAPI.AuthProvider
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AuthDbContext>(options => {
-                options.UseSqlServer(Configuration.GetConnectionString("AuthDB"));
+                options.UseSqlServer(Configuration.GetConnectionString("AuthDBDocker"));
             });
 
             services.AddIdentity<Usuario, IdentityRole>(options =>
